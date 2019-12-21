@@ -78,12 +78,6 @@ body {
   cursor: pointer;
 }
 
-.memes-img-box {
-  text-align: center;
-  /* overflow: auto;
-  width: 50%;
-  height: 30%; */
-}
 
 .memes-caption {
   display: inherit;
@@ -117,16 +111,15 @@ body {
   margin-top: 5%;
   display: inline-block;
   width: 61%;
-  margin-left: -12%;
 }
 
 
 .memes-save-item {
+  position: relative;
   overflow-y:auto;
-  position: absolute;
+  /* position: absolute; */
   margin-top: 10px;
   height: 330px;
-  /* margin-left: 62%; */
   display: inline-block;
   /* height: auto; */
   background: #5352DD;
@@ -149,17 +142,16 @@ body {
 }
 
 .memes-save-item div {
-  text-align: center;
   color: white;
   padding: 2px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .memes-save-item img {
+  border-radius: 5px;
   width: 71px;
   height: 57px;
-  float: left;
-  text-align: center;
+  /* float: left; */
   padding: 9px;
 }
 
@@ -216,11 +208,83 @@ height:70px;
 .memes-img-No-data{
   text-align: center;
   position: relative;
-  margin-top: 10%;
   display: inline-block;
   width: 61%;
   font-size: 22px;
-  margin-left: -11%;
   font-weight:600;
+  bottom: 42%;
   
+}
+
+.textposition{
+  position: absolute;
+  top: 37px;
+  left: 30px;
+}
+
+.saved-memes-top{
+  word-break: break-all;
+  background: transparent;
+  display: inline-block;
+  position: absolute;
+  left: 27%;
+  width: 38%;
+  margin: 1%;
+  font-size: 7px;
+  top:16%;
+}
+.saved-memes-center{
+  word-break: break-all;
+  display: inline-block;
+  position: absolute;
+  left: 31%;
+    top: 35%;
+  margin: 1%;
+  width: 38%;
+  background: transparent;
+  font-size: 7px;
+  height: 70px;
+}
+
+.saved-memes-bottom{
+  word-break: break-all;
+  display: inline-block;
+  position: absolute;
+  left: 30%;
+  width: 38%;
+  bottom: -48%;
+  margin: 1%;
+  font-size: 7px;
+  background: transparent;
+  height: 70px;
+}
+.clear-save-menu{
+  margin-left: -11%;
+  margin-top: 13%;
+  color: white;
+  border-radius: 4px;
+  background: #5352dd;
+  width: 12%;
+  height: 54px;
+  position: absolute;
+  font-size: 16px;
+}
+
+.align-image{
+  width: 50%;
+  position: relative;
+}
+
+.change{
+  position: relative;
+  float:left;
+  width: 40%;
+}
+
+
+.change:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+  z-index: 11;
 }
