@@ -1,8 +1,9 @@
 /*
  src/actions/simpleAction.js
 */
-import { SEARCH_SUCCESS, SEARCH_FAILURE, ADD_LOADER, CHANGE_POSITION, CHANGE_CAPTION, SAVE_DATA } from './constant.js';
+import { SEARCH_SUCCESS, SEARCH_FAILURE, ADD_LOADER, CHANGE_POSITION, CHANGE_CAPTION, SAVE_DATA ,CLEAR_DATA} from './constant.js';
 export const demoAction = () => dispatch => {
+
     dispatch({
      type: 'SIMPLE_ACTION',
      payload: 'result_of_simple_action'
@@ -55,3 +56,12 @@ export function saveData(text)  {
         text
     };
 };
+
+export function clearData(text)  {
+    console.log('text', text);
+    return {
+        type: CLEAR_DATA,
+        text
+    };
+};
+

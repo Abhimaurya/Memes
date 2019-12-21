@@ -1,5 +1,4 @@
-import { SEARCH_SUCCESS, SAVE_DATA, ADD_LOADER, CHANGE_POSITION } from './constant.js';
-import {CHANGE_CAPTION} from "./constant";
+import { SEARCH_SUCCESS, SAVE_DATA, ADD_LOADER, CHANGE_POSITION ,CHANGE_CAPTION,CLEAR_DATA} from './constant.js';
 export const initialState = {
     demo: false,
     imageData: null,
@@ -66,12 +65,19 @@ export default (state = initialState, action) => {
         if(state.imageData) {
             data = [state.imageData, ...data]
         }
+        console.log("getdata",data);
         localStorage.setItem('data', JSON.stringify(data));
         return {
             ...state,
             data,
             loading: false
         };
+    }
+
+    case CLEAR_DATA:{
+        console.log('clearDATA', action.text);
+        localStorage.clear();
+        window.location.reload();
     }
 
      default:
