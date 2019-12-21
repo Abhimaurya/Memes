@@ -1,11 +1,12 @@
 import { SEARCH_SUCCESS, SAVE_DATA, ADD_LOADER, CHANGE_POSITION ,CHANGE_CAPTION,CLEAR_DATA} from './constant.js';
+//Initialise the state
 export const initialState = {
     demo: false,
     imageData: null,
     loading: false,
     data: JSON.parse(localStorage.getItem('data')) || [],
   };
-
+//Simple action when data not loaded
 export default (state = initialState, action) => {
     switch (action.type) {
      case 'SIMPLE_ACTION':
@@ -20,7 +21,7 @@ export default (state = initialState, action) => {
             loading: true
         };
     }
-
+    //Loading  image at center
     case SEARCH_SUCCESS: {
         console.log('result', action.payload);
         let imageData = null;
@@ -34,6 +35,7 @@ export default (state = initialState, action) => {
             loading: false
         };
     }
+    //Change position of text top,center,or bottom
     case CHANGE_POSITION: {
         let imageData = null;
         if(state.imageData) {
@@ -59,6 +61,7 @@ export default (state = initialState, action) => {
             loading: false
         };
     }
+    // saved memes in right section after click on save meme button
     case SAVE_DATA: {
         console.log('caption', action.text);
         let data = state.data;
@@ -73,7 +76,7 @@ export default (state = initialState, action) => {
             loading: false
         };
     }
-
+    //cleared the saved memes
     case CLEAR_DATA:{
         console.log('clearDATA', action.text);
         localStorage.clear();

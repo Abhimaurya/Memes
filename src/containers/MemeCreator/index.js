@@ -33,27 +33,18 @@ function MemeCreator(props) {
                                     <div>Saved Meme</div>
                                     {
                                         data.map((d) => (
-                                            // <div className="align-image">
                                             <React.Fragment>
                                                 <div class="change">
                                             <img key={d.id} src={d.url} alt="saved image" />
-                                            {/* <span className="textposition">{d.text}</span> */}
                                             {
                                             d.position === 'top' ? <span className="saved-memes-top">{d.text}</span> : d.position === 'center' ? <span className="saved-memes-center">{d.text}</span> : <span className="saved-memes-bottom">{d && d.text}</span>
                                         }
                                         </div>
                                             </React.Fragment>
-                                            // </div>
                                         ))
                                     }
-                                    {/* {
-                             imageData.position === 'top' ? <div className="memes-top">{imageData && imageData.text}</div> : imageData.position === 'center' ?  <div className="memes-center">{imageData && imageData.text}</div> : <div className="memes-bottom">{imageData && imageData.text}</div>
-                        } */}
-                                </div>
-                              
-
+                                 </div>
                             }
-                              {/* <button onclick>Clear Save</button> */}
                         </div>
                         
                      
