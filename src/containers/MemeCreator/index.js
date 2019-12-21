@@ -19,14 +19,14 @@ function MemeCreator(props) {
                     <div class="row">
                         <div className="memes-second-row">
                             {
-                                !loading && imageData === null ? <div className="memes-img-No-data">No Data Found</div> : imageData && Object.keys(imageData).length ?
+                                !loading && imageData === null ? <div className="memes-img-No-data">Please Load Image !</div> : imageData && Object.keys(imageData).length ?
 
                                     <div className="memes-img-box">
                                         <img src={imageData.url} alt="main image" />
                                         {
                                             imageData.position === 'top' ? <div className="memes-top">{imageData && imageData.text}</div> : imageData.position === 'center' ? <div className="memes-center">{imageData && imageData.text}</div> : <div className="memes-bottom">{imageData && imageData.text}</div>
                                         }
-                                    </div> : <div className="memes-img-No-data"> Loading</div>
+                                    </div> : <div className="memes-img-No-data"> Loading...</div>
                             }
                             {
                                 <div className="memes-save-item">
@@ -75,7 +75,7 @@ function MemeCreator(props) {
                         <button onClick={() => props.dispatch(saveData())} id="memes-save">Save Meme</button>
 
                     </div>
-                    <div class="row">
+                    <div className="row changewidth">
                     <button className="clear-save-menu"  onClick={() => props.dispatch(clearData())} >Clear Saved Meme</button>
                     </div>
 
