@@ -1,20 +1,19 @@
 /*
  src/actions/simpleAction.js
 */
-import { SEARCH_SUCCESS, SEARCH_FAILURE, ADD_LOADER, CHANGE_POSITION, CHANGE_CAPTION, SAVE_DATA ,CLEAR_DATA} from './constant.js';
+import { SEARCH_SUCCESS, SEARCH_FAILURE, ADD_LOADER, CHANGE_POSITION, CHANGE_CAPTION, SAVE_DATA, CLEAR_DATA } from './constant.js';
 export const demoAction = () => dispatch => {
 
     dispatch({
-     type: 'SIMPLE_ACTION',
-     payload: 'result_of_simple_action'
+        type: 'SIMPLE_ACTION',
+        payload: 'result_of_simple_action'
     })
 };
-
-export function searchAction  (query)  {
-    // console.log('here also');
+//call splashbase api
+export function searchAction(query) {
     return dispatch => {
         console.log('inside')
-        dispatch({ type: ADD_LOADER});
+        dispatch({ type: ADD_LOADER });
         fetch('http://www.splashbase.co/api/v1/images/search?query=' + query)
             .then(resp => resp.json())
             .then(result => {
@@ -32,7 +31,7 @@ export function searchAction  (query)  {
     };
 };
 
-export function changePosition(position)  {
+export function changePosition(position) {
     console.log('position', position);
     return {
         type: CHANGE_POSITION,
@@ -40,7 +39,7 @@ export function changePosition(position)  {
     };
 };
 
-export function changeCaption(text)  {
+export function changeCaption(text) {
     console.log('text', text);
     return {
         type: CHANGE_CAPTION,
@@ -49,7 +48,7 @@ export function changeCaption(text)  {
 };
 
 
-export function saveData(text)  {
+export function saveData(text) {
     console.log('text', text);
     return {
         type: SAVE_DATA,
@@ -57,7 +56,7 @@ export function saveData(text)  {
     };
 };
 
-export function clearData(text)  {
+export function clearData(text) {
     console.log('text', text);
     return {
         type: CLEAR_DATA,
